@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
+@theme {
+  --color-bg: #07090c;
+  --color-surface: #0f1620;
+  --color-surface-2: #15202e;
+  --color-border: #1c2a3a;
+  --color-fg: #ffffff;
+  --color-fg-muted: #9aa8b8;
+  --color-fg-dim: #6b7a8b;
+
+  --color-brand-primary: #017db9;
+  --color-brand-primary-hot: #1894d4;
+  --color-brand-primary-dark: #015a83;
+  --color-brand-navy: #033a54;
+  --color-brand-navy-2: #035881;
+  --color-brand-ink: #231f20;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-oswald), Impact, "Arial Narrow Bold", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --container-narrow: 64rem;
+  --container-wide: 80rem;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-brand-primary);
+  color: #fff;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+.bg-noise {
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(1, 125, 185, 0.22), transparent 60%),
+    radial-gradient(900px 500px at 80% 110%, rgba(3, 58, 84, 0.35), transparent 65%),
+    linear-gradient(180deg, #07090c 0%, #07090c 100%);
+}
+
+.diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(1, 125, 185, 0.10) 0,
+    rgba(1, 125, 185, 0.10) 2px,
+    transparent 2px,
+    transparent 18px
+  );
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1.5px currentColor;
+  color: transparent;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
