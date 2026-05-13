@@ -1,7 +1,7 @@
 export const site = {
   name: "Trench Academy",
   parent: "by Recruit Ready",
-  tagline: "Built in the trenches. Made for the next level.",
+  tagline: "Built in the trenches.",
   description:
     "Trench Academy by Recruit Ready develops football athletes from grassroots through college and pro. Position-specific training, recruiting prep, and elite-level development.",
   url: "https://trenchacademy.com",

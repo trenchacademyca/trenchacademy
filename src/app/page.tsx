@@ -41,10 +41,8 @@ export default function Home() {
         <Container className="relative pt-20 pb-24 sm:pt-32 sm:pb-40">
           <Eyebrow>Trench Academy by Recruit Ready</Eyebrow>
 
-          <h1 className="mt-6 max-w-4xl font-display text-4xl font-bold uppercase leading-[0.95] tracking-tight text-fg sm:text-7xl lg:text-8xl">
+          <h1 className="mt-6 max-w-5xl font-display text-6xl font-bold uppercase leading-[0.85] tracking-tight text-fg sm:text-8xl lg:text-9xl">
             Built in the <span className="text-brand-primary">trenches.</span>
-            <br />
-            Made for the next level.
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-fg-muted">
