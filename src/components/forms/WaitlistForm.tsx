@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/site/Button";
+import { site } from "@/lib/site";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -15,18 +16,28 @@ export function WaitlistForm({ compact = false }: { compact?: boolean }) {
     setError(null);
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const formData = new FormData(form);
+    formData.append("access_key", site.formAccessKey);
+    formData.append("subject", "New App Waitlist Signup: Trench Academy Website");
+    formData.append("from_name", "Trench Academy Website");
+    formData.append("Form", "App Waitlist (Trench Academy app early access)");
 
-    // TODO: wire up delivery (Resend, Mailchimp, etc.).
     try {
-      // eslint-disable-next-line no-console
-      console.info("[WaitlistForm] submission payload", data);
-      await new Promise((r) => setTimeout(r, 500));
-      setStatus("success");
-      form.reset();
-    } catch (err) {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await res.json();
+      if (result.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+        setError(result.message || "Something went wrong. Please try again.");
+      }
+    } catch {
       setStatus("error");
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setError("Something went wrong. Please try again.");
     }
   }
 
@@ -59,6 +70,15 @@ export function WaitlistForm({ compact = false }: { compact?: boolean }) {
 
   return (
     <form onSubmit={onSubmit} className="space-y-3">
+      <input
+        type="checkbox"
+        name="botcheck"
+        className="hidden"
+        style={{ display: "none" }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
       <div className={`flex flex-col gap-3 ${compact ? "sm:flex-row" : "sm:flex-row"}`}>
         <label className="block flex-1">
           <span className="sr-only">Email address</span>

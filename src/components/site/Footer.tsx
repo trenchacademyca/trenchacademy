@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { nav, site } from "@/lib/site";
 import { Logo } from "./Logo";
+import { SocialLinks } from "./SocialLinks";
+import { MailIcon } from "./icons";
 
 export function Footer() {
   return (
@@ -51,40 +53,15 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <a
-                  href={site.social.instagram}
-                  className="text-fg-muted hover:text-fg"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${site.email}`}
+                  className="inline-flex items-center gap-2.5 text-fg-muted transition-colors hover:text-brand-primary"
                 >
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.social.youtube}
-                  className="text-fg-muted hover:text-fg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  YouTube
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.social.twitter}
-                  className="text-fg-muted hover:text-fg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  X / Twitter
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${site.email}`} className="text-fg-muted hover:text-fg">
-                  {site.email}
+                  <MailIcon className="h-5 w-5 flex-shrink-0" />
+                  <span>{site.email}</span>
                 </a>
               </li>
             </ul>
+            <SocialLinks className="mt-2" />
           </div>
         </div>
 
@@ -93,7 +70,7 @@ export function Footer() {
             © {new Date().getFullYear()} {site.name} {site.parent}. All rights reserved.
           </span>
           <span className="font-display uppercase tracking-[0.25em]">
-            Built in the trenches.
+            Trust the process.
           </span>
         </div>
       </div>

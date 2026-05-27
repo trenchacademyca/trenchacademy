@@ -25,7 +25,7 @@ export default function ProgramsPage() {
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-fg-muted">
             From a first-time youth player learning the game to a senior chasing a
-            scholarship — our programs are built around where your athlete is and where
+            scholarship, our programs are built around where your athlete is and where
             they&apos;re trying to go.
           </p>
         </Container>

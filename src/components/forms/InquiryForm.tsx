@@ -4,11 +4,11 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { programs } from "@/data/programs";
 import { Button } from "@/components/site/Button";
+import { site } from "@/lib/site";
 
 const levels = [
-  "Grassroots (8–13)",
-  "Middle School (6–8)",
-  "High School (9–12)",
+  "Youth",
+  "High School",
   "College / Transfer",
   "Pro / Post-college",
 ];
@@ -28,19 +28,28 @@ export function InquiryForm() {
     setError(null);
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const formData = new FormData(form);
+    formData.append("access_key", site.formAccessKey);
+    formData.append("subject", "New Inquiry: Trench Academy Website");
+    formData.append("from_name", "Trench Academy Website");
+    formData.append("Form", "Contact Inquiry");
 
-    // TODO: wire up delivery (Resend, Formspree, etc.).
-    // For now we simulate success and log the payload to the console.
     try {
-      // eslint-disable-next-line no-console
-      console.info("[InquiryForm] submission payload", data);
-      await new Promise((r) => setTimeout(r, 600));
-      setStatus("success");
-      form.reset();
-    } catch (err) {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await res.json();
+      if (result.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+        setError(result.message || "Something went wrong. Please try again.");
+      }
+    } catch {
       setStatus("error");
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setError("Something went wrong. Please try again.");
     }
   }
 
@@ -54,8 +63,7 @@ export function InquiryForm() {
           We&apos;ll be in touch.
         </h3>
         <p className="mt-4 text-fg-muted">
-          Thanks for reaching out. A coach will follow up shortly with next steps. In the
-          meantime — get to work.
+          Thanks for your inquiry. A coach will review it and follow up soon.
         </p>
       </div>
     );
@@ -67,9 +75,18 @@ export function InquiryForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-5">
+      <input
+        type="checkbox"
+        name="botcheck"
+        className="hidden"
+        style={{ display: "none" }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block">
-          <span className={labelCls}>Parent / Athlete Name *</span>
+          <span className={labelCls}>Your Name *</span>
           <input
             required
             name="name"
@@ -145,17 +162,17 @@ export function InquiryForm() {
           name="position"
           type="text"
           className={`mt-2 ${inputCls}`}
-          placeholder="e.g. DL, OL, WR, QB"
+          placeholder="e.g. OL, DL, OT, OG, C, DE, DT"
         />
       </label>
 
       <label className="block">
-        <span className={labelCls}>Tell us about your athlete</span>
+        <span className={labelCls}>Your Message</span>
         <textarea
           name="message"
           rows={5}
           className={`mt-2 ${inputCls} resize-y`}
-          placeholder="Goals, current school/team, year, anything else you want us to know."
+          placeholder="Goals, current school/team, year, and anything else we should know."
         />
       </label>
 
@@ -169,9 +186,6 @@ export function InquiryForm() {
         <Button size="lg" type="submit" disabled={status === "submitting"}>
           {status === "submitting" ? "Sending…" : "Send Inquiry"}
         </Button>
-        <span className="text-xs text-fg-dim">
-          We&apos;ll respond within 1–2 business days.
-        </span>
       </div>
     </form>
   );

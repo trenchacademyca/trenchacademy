@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { Section } from "@/components/site/Section";
 import { Eyebrow } from "@/components/site/Eyebrow";
 import { Button } from "@/components/site/Button";
+import { AthletePhoto } from "@/components/site/AthletePhoto";
 import { featuredAthletes, testimonials } from "@/data/athletes";
 
 export const metadata: Metadata = {
@@ -24,8 +24,8 @@ export default function TestimonialsPage() {
             <span className="text-brand-primary">trenches.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-fg-muted">
-            Real athletes. Real work. The players who train with us — and where you can
-            watch them play.
+            The driven, committed athletes who put in the work with us, at every level of
+            the game.
           </p>
         </Container>
       </Section>
@@ -43,13 +43,7 @@ export default function TestimonialsPage() {
                 key={a.slug}
                 className="group relative aspect-[3/4] overflow-hidden border border-border bg-surface"
               >
-                <Image
-                  src={a.image}
-                  alt={`${a.name} — ${a.team}`}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                <AthletePhoto athlete={a} />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg/95 via-bg/30 to-transparent" />
                 <figcaption className="absolute inset-x-0 bottom-0 p-4">
                   <div className="font-display text-xs uppercase tracking-[0.25em] text-brand-primary">
@@ -68,9 +62,9 @@ export default function TestimonialsPage() {
 
       <Section className="border-y border-border bg-surface">
         <Container>
-          <Eyebrow>In Their Words</Eyebrow>
+          <Eyebrow>Testimonials</Eyebrow>
           <h2 className="mt-4 font-display text-3xl font-bold uppercase sm:text-4xl">
-            From the people in it
+            In their words.
           </h2>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">

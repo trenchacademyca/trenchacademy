@@ -4,6 +4,8 @@ import { Container } from "@/components/site/Container";
 import { Section } from "@/components/site/Section";
 import { Eyebrow } from "@/components/site/Eyebrow";
 import { InquiryForm } from "@/components/forms/InquiryForm";
+import { SocialLinks } from "@/components/site/SocialLinks";
+import { MailIcon, PhoneIcon } from "@/components/site/icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -22,8 +24,8 @@ export default function ContactPage() {
             Start an inquiry.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-fg-muted">
-            Tell us where your athlete is and where they want to be. A coach will follow
-            up with next steps.
+            Serious about your game? This is where it starts. Tell us about your athlete
+            and we&apos;ll take it from there.
           </p>
         </Container>
       </Section>
@@ -40,59 +42,29 @@ export default function ContactPage() {
             <aside className="space-y-8">
               <div>
                 <Eyebrow>Direct</Eyebrow>
-                <div className="mt-3 space-y-1 text-fg-muted">
-                  <a href={`mailto:${site.email}`} className="block hover:text-fg">
-                    {site.email}
+                <div className="mt-3 space-y-2 text-sm text-fg-muted">
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="inline-flex items-center gap-2.5 transition-colors hover:text-brand-primary"
+                  >
+                    <MailIcon className="h-5 w-5 flex-shrink-0" />
+                    <span>{site.email}</span>
                   </a>
                   {site.phone && (
-                    <a href={`tel:${site.phone}`} className="block hover:text-fg">
-                      {site.phone}
+                    <a
+                      href={`tel:${site.phone}`}
+                      className="inline-flex items-center gap-2.5 transition-colors hover:text-brand-primary"
+                    >
+                      <PhoneIcon className="h-5 w-5 flex-shrink-0" />
+                      <span>{site.phone}</span>
                     </a>
                   )}
                 </div>
               </div>
 
               <div>
-                <Eyebrow>Train Where</Eyebrow>
-                <p className="mt-3 text-fg-muted">
-                  {site.location || "Location details coming soon. Reach out for the latest schedule."}
-                </p>
-              </div>
-
-              <div>
                 <Eyebrow>Follow</Eyebrow>
-                <ul className="mt-3 space-y-1 text-fg-muted">
-                  <li>
-                    <a
-                      href={site.social.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-fg"
-                    >
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={site.social.youtube}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-fg"
-                    >
-                      YouTube
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={site.social.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-fg"
-                    >
-                      X / Twitter
-                    </a>
-                  </li>
-                </ul>
+                <SocialLinks className="mt-3" />
               </div>
             </aside>
           </div>

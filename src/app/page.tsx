@@ -6,6 +6,7 @@ import { Button } from "@/components/site/Button";
 import { Eyebrow } from "@/components/site/Eyebrow";
 import { Marquee } from "@/components/site/Marquee";
 import { StatBlock } from "@/components/site/StatBlock";
+import { AthletePhoto } from "@/components/site/AthletePhoto";
 import { programs } from "@/data/programs";
 import { featuredAthletes, testimonials } from "@/data/athletes";
 import { posts } from "@/data/posts";
@@ -42,7 +43,7 @@ export default function Home() {
           <Eyebrow>Trench Academy by Recruit Ready</Eyebrow>
 
           <h1 className="mt-6 max-w-5xl font-display text-6xl font-bold uppercase leading-[0.85] tracking-tight text-fg sm:text-8xl lg:text-9xl">
-            Built in the <span className="text-brand-primary">trenches.</span>
+            Trust the <span className="text-brand-primary">process.</span>
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-fg-muted">
@@ -63,7 +64,7 @@ export default function Home() {
           <div className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-4">
             <StatBlock value="500+" label="Athletes Trained" />
             <StatBlock value="50+" label="College Commits" />
-            <StatBlock value="6" label="Programs" />
+            <StatBlock value="6+" label="Pros Produced" />
             <StatBlock value="∞" label="Reps in the Lab" />
           </div>
         </Container>
@@ -71,11 +72,13 @@ export default function Home() {
 
       <Marquee
         items={[
-          "Grassroots → Pro",
+          "Youth → Pro",
           "Recruit Ready",
           "Trenches Training",
-          "Skill Position Lab",
+          "O-Line",
+          "D-Line",
           "Combine Prep",
+          "Film Breakdown",
           "Welcome to the Trenches",
         ]}
       />
@@ -87,9 +90,9 @@ export default function Home() {
             <div>
               <Eyebrow>What We Train</Eyebrow>
               <h2 className="mt-4 font-display text-4xl font-bold uppercase leading-tight sm:text-5xl">
-                Pick your level.
+                Built for
                 <br />
-                We&apos;ll meet you there.
+                <span className="text-brand-primary">the climb.</span>
               </h2>
             </div>
             <Link
@@ -100,12 +103,12 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {programs.slice(0, 6).map((p) => (
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+            {programs.map((p) => (
               <Link
                 key={p.slug}
                 href={`/programs#${p.slug}`}
-                className="group relative flex flex-col border border-border bg-surface p-6 transition-colors hover:border-brand-primary"
+                className="group relative flex w-full flex-col border border-border bg-surface p-6 transition-colors hover:border-brand-primary sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
               >
                 <span className="font-display text-xs uppercase tracking-[0.25em] text-brand-primary">
                   {p.level}
@@ -114,7 +117,7 @@ export default function Home() {
                   {p.name}
                 </h3>
                 <p className="mt-3 text-sm text-fg-muted">{p.summary}</p>
-                <span className="mt-6 font-display text-xs uppercase tracking-[0.25em] text-fg-dim group-hover:text-brand-primary">
+                <span className="mt-auto pt-6 font-display text-xs uppercase tracking-[0.25em] text-fg-dim group-hover:text-brand-primary">
                   {p.cta} →
                 </span>
               </Link>
@@ -130,8 +133,13 @@ export default function Home() {
             <div>
               <Eyebrow>The Athletes</Eyebrow>
               <h2 className="mt-4 font-display text-4xl font-bold uppercase leading-tight sm:text-5xl">
-                Real reps. Real results.
+                Real reps.
+                <br />
+                <span className="text-brand-primary">Real results.</span>
               </h2>
+              <p className="mt-4 max-w-md text-fg-muted">
+                Driven, committed athletes putting in the work in the trenches with us.
+              </p>
             </div>
             <Link
               href="/testimonials"
@@ -142,18 +150,12 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid gap-3 grid-cols-[repeat(auto-fit,minmax(220px,1fr))]">
-            {featuredAthletes.map((a) => (
+            {featuredAthletes.slice(0, 5).map((a) => (
               <figure
                 key={a.slug}
                 className="group relative aspect-[3/4] overflow-hidden border border-border bg-bg"
               >
-                <Image
-                  src={a.image}
-                  alt={`${a.name} — ${a.team}`}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                <AthletePhoto athlete={a} />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg/95 via-bg/30 to-transparent" />
                 <figcaption className="absolute inset-x-0 bottom-0 p-4">
                   <div className="font-display text-xs uppercase tracking-[0.25em] text-brand-primary">
@@ -194,7 +196,7 @@ export default function Home() {
               </h2>
               <p className="mt-6 text-fg-muted">
                 Trench Academy isn&apos;t just about reps and results. It&apos;s about
-                the people in the building — athletes, coaches, parents, and alumni who
+                the people in the building: athletes, coaches, parents, and alumni who
                 pull each other forward. Once you&apos;re in the trenches with us,
                 you&apos;re family.
               </p>
@@ -284,25 +286,19 @@ export default function Home() {
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
             <div>
-              <Eyebrow>Coming Soon</Eyebrow>
+              <Eyebrow>The Trench Academy App</Eyebrow>
               <h2 className="mt-4 font-display text-4xl font-bold uppercase leading-tight sm:text-5xl lg:text-6xl">
-                The Trench Academy app.
+                The whole lab.
                 <br />
                 <span className="text-brand-primary">In your pocket.</span>
               </h2>
-              <p className="mt-6 max-w-xl text-fg-muted">
-                Training plans, drill film, coach feedback, and recruiting tools — the
-                whole lab, anywhere you train. Drops soon. Get on the list to be first
-                in line.
+              <p className="mt-5 font-display text-sm uppercase tracking-[0.3em] text-brand-primary">
+                Drops soon.
               </p>
-              <div className="mt-4">
-                <Link
-                  href="/app"
-                  className="font-display text-xs uppercase tracking-[0.25em] text-brand-primary hover:text-brand-primary-hot"
-                >
-                  Learn more →
-                </Link>
-              </div>
+              <p className="mt-5 max-w-xl text-fg-muted">
+                Training plans, drill film, coach feedback, and recruiting tools. The
+                whole lab, anywhere you train. Get on the list to be first in line.
+              </p>
             </div>
 
             <div className="border border-border bg-surface p-6 sm:p-8">
@@ -349,8 +345,8 @@ export default function Home() {
             Get in the lab.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-fg-muted">
-            Tell us where your athlete is and where they want to be. We&apos;ll build
-            the plan.
+            Serious about your game? This is where it starts. Tell us about your athlete
+            and we&apos;ll take it from there.
           </p>
           <div className="mt-10 flex justify-center">
             <Button href="/contact" size="lg">

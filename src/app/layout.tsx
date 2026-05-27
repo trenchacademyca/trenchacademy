@@ -18,7 +18,7 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} ${site.parent} — ${site.tagline}`,
+    default: `${site.name} ${site.parent} · ${site.tagline}`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
@@ -38,6 +38,17 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  name: `${site.name} ${site.parent}`,
+  url: site.url,
+  logo: `${site.url}/logo.jpg`,
+  description: site.description,
+  sport: "American football",
+  sameAs: [site.social.instagram],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,6 +57,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${oswald.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-bg text-fg">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

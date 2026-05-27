@@ -9,7 +9,7 @@ export type FeaturedAthlete = {
   name: string;
   league: string;
   team: string;
-  image: string;
+  image?: string;
 };
 
 export const featuredAthletes: FeaturedAthlete[] = [
@@ -48,18 +48,53 @@ export const featuredAthletes: FeaturedAthlete[] = [
     team: "Notre Dame Fighting Irish",
     image: "/media/athletes/sean-sevillano.jpg",
   },
+  {
+    slug: "gavin-coakes",
+    name: "Gavin Coakes",
+    league: "CFL",
+    team: "Toronto Argonauts",
+    image: "/media/athletes/sean-sevillano.jpg",
+  },
+  {
+    slug: "sean-rowe",
+    name: "Sean Rowe",
+    league: "U SPORTS",
+    team: "Manitoba Bisons",
+    image: "/media/athletes/sean-sevillano.jpg",
+  },
+  {
+    slug: "tbd-1",
+    name: "Name TBD",
+    league: "High School",
+    team: "Dakota Collegiate",
+    image: "/media/athletes/sean-sevillano.jpg",
+  },
+  {
+    slug: "tbd-2",
+    name: "Name TBD",
+    league: "High School",
+    team: "Dakota Collegiate",
+    image: "/media/athletes/sean-sevillano.jpg",
+  },
+  {
+    slug: "tbd-3",
+    name: "Name TBD",
+    league: "High School",
+    team: "Dakota Collegiate",
+    image: "/media/athletes/sean-sevillano.jpg",
+  },
 ];
 
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Placeholder testimonial. Trench Academy didn't just make me a better player — they made me a better student of the game. Replace with real quote.",
+      "Placeholder testimonial. Trench Academy didn't just make me a better player. They made me a better student of the game. Replace with real quote.",
     attribution: "Athlete Name",
     role: "DL • Class of 2025",
   },
   {
     quote:
-      "Placeholder testimonial from a parent. The coaching, the structure, the people — top to bottom this is the program we wish we'd found years earlier.",
+      "Placeholder testimonial from a parent. The coaching, the structure, the people: top to bottom this is the program we wish we'd found years earlier.",
     attribution: "Parent Name",
     role: "Parent",
   },
