@@ -10,7 +10,7 @@ export const site = {
   phone: "",
   location: "",
   // Web3Forms public access key — routes form submissions to the configured inbox.
-  formAccessKey: "9cbeeea9-a5a1-4b49-ae48-e4a78a413b57",
+  formAccessKey: "b1d1befa-bbac-4232-80f3-9416a51ed29d",
   social: {
     instagram: "https://www.instagram.com/recruitready/",
   },
