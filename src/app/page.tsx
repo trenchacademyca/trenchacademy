@@ -415,7 +415,7 @@ export default function Home() {
       <Section className="relative isolate overflow-hidden border-t border-border">
         <div className="absolute inset-0 -z-10 diagonal-stripes opacity-30" />
         <Container size="narrow" className="text-center">
-          <Eyebrow className="justify-center">Ready to work?</Eyebrow>
+          <Eyebrow className="justify-center">Ready to get to work?</Eyebrow>
           <h2 className="mt-6 font-display text-5xl font-bold uppercase leading-tight sm:text-6xl">
             Get in the lab.
           </h2>
