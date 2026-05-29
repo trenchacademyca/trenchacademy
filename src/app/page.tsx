@@ -352,7 +352,7 @@ export default function Home() {
                 <span className="text-brand-primary">In your pocket.</span>
               </h2>
               <p className="mt-5 font-display text-sm uppercase tracking-[0.3em] text-brand-primary">
-                Drops soon.
+                Drops soon
               </p>
               <p className="mt-5 max-w-xl text-fg-muted">
                 Training plans, drill film, coach feedback, and recruiting tools. The
