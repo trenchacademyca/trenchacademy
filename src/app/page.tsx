@@ -112,7 +112,7 @@ export default function Home() {
 
           <div className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-4">
             <StatBlock value="1500+" label="Athletes Trained" />
-            <StatBlock value="200+" label="U SPORTS Athletes" />
+            <StatBlock value="200+" label="College + U SPORTS Athletes" />
             <StatBlock value="25+" label="CFL Pros" />
             <StatBlock value="15+" label="NCAA Athletes" />
           </div>
