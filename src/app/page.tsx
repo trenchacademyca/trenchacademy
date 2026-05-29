@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
@@ -11,6 +12,16 @@ import { programs } from "@/data/programs";
 import { featuredAthletes, testimonials } from "@/data/athletes";
 import { posts } from "@/data/posts";
 import { WaitlistForm } from "@/components/forms/WaitlistForm";
+
+export const metadata: Metadata = {
+  title: {
+    absolute:
+      "Trench Academy by Recruit Ready · Football Line-Play Training, Recruiting & Development",
+  },
+  description:
+    "Position-specific football training for offensive and defensive linemen. Grassroots through pro: technique, recruiting prep, combine prep, and elite player development. Trust the process.",
+  alternates: { canonical: "/" },
+};
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-US", {
@@ -34,8 +45,19 @@ export default function Home() {
             sizes="100vw"
             className="object-cover object-center"
           />
+          <video
+            src="/media/video/home-hero.mp4"
+            poster="/media/hero/hero-sean-sevillano.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
+          />
         </div>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-bg via-bg/85 to-bg/30" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-bg/85 via-bg/65 to-bg/25" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-bg via-transparent to-bg/40" />
         <div className="absolute inset-0 -z-10 diagonal-stripes opacity-40" />
 
@@ -45,6 +67,33 @@ export default function Home() {
           <h1 className="mt-6 max-w-5xl font-display text-6xl font-bold uppercase leading-[0.85] tracking-tight text-fg sm:text-8xl lg:text-9xl">
             Trust the <span className="text-brand-primary">process.</span>
           </h1>
+
+          <div className="mt-8 flex items-center gap-6 sm:gap-8">
+            <Image
+              src="/logo.png"
+              alt="Trench Academy"
+              width={120}
+              height={112}
+              className="h-14 w-auto sm:h-16"
+              priority
+            />
+            <span className="h-10 w-px bg-border" aria-hidden="true" />
+            <a
+              href="https://www.rrsportsacademy.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Recruit Ready"
+              className="opacity-90 transition-opacity hover:opacity-100"
+            >
+              <Image
+                src="/recruit-ready-logo.png"
+                alt="Recruit Ready"
+                width={300}
+                height={56}
+                className="h-7 w-auto sm:h-9"
+              />
+            </a>
+          </div>
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-fg-muted">
             Grassroots through pro. Position-specific training, recruiting prep, and
@@ -142,7 +191,7 @@ export default function Home() {
               </p>
             </div>
             <Link
-              href="/testimonials"
+              href="/athletes"
               className="font-display text-sm uppercase tracking-[0.25em] text-brand-primary hover:text-brand-primary-hot"
             >
               All athletes →
@@ -150,7 +199,17 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid gap-3 grid-cols-[repeat(auto-fit,minmax(220px,1fr))]">
-            {featuredAthletes.slice(0, 5).map((a) => (
+            {featuredAthletes
+              .filter((a) =>
+                [
+                  "zack-williams",
+                  "gio-vaccaro",
+                  "victor-olaniran",
+                  "matt-stokman",
+                  "sean-sevillano",
+                ].includes(a.slug),
+              )
+              .map((a) => (
               <figure
                 key={a.slug}
                 className="group relative aspect-[3/4] overflow-hidden border border-border bg-bg"
@@ -318,20 +377,36 @@ export default function Home() {
 
       {/* TESTIMONIAL */}
       <Section>
-        <Container size="narrow">
-          <Eyebrow>From the Trenches</Eyebrow>
-          <blockquote className="mt-6 font-display text-3xl font-medium uppercase leading-tight text-fg sm:text-4xl">
-            &ldquo;{testimonials[0].quote}&rdquo;
-          </blockquote>
-          <div className="mt-6 text-sm text-fg-muted">
-            <span className="font-semibold text-fg">{testimonials[0].attribution}</span>
-            <span className="mx-2 text-fg-dim">·</span>
-            <span>{testimonials[0].role}</span>
-          </div>
-          <div className="mt-10">
-            <Button href="/testimonials" variant="ghost">
-              More athlete stories
-            </Button>
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+            <div className="relative aspect-[4/5] overflow-hidden border border-border bg-surface">
+              <Image
+                src="/media/testimonials/denzel-sam-uje.jpg"
+                alt={`${testimonials[0].attribution} training at Trench Academy`}
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/30 via-transparent to-transparent" />
+            </div>
+            <div>
+              <Eyebrow>From the Trenches</Eyebrow>
+              <blockquote className="mt-6 font-display text-3xl font-medium uppercase leading-tight text-fg sm:text-4xl lg:text-5xl">
+                &ldquo;{testimonials[0].quote}&rdquo;
+              </blockquote>
+              <div className="mt-8 text-sm text-fg-muted">
+                <span className="font-display font-semibold uppercase tracking-wider text-fg">
+                  {testimonials[0].attribution}
+                </span>
+                <span className="mx-2 text-fg-dim">·</span>
+                <span>{testimonials[0].role}</span>
+              </div>
+              <div className="mt-10">
+                <Button href="/athletes" variant="ghost">
+                  More athlete stories
+                </Button>
+              </div>
+            </div>
           </div>
         </Container>
       </Section>

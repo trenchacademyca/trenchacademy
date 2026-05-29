@@ -12,7 +12,7 @@ export const coaches: Coach[] = [
     name: "Zack Williams",
     role: "Offensive Line",
     bio: "Currently plays in the CFL with the Calgary Stampeders.",
-    image: "/media/athletes/zack-williams.jpg",
+    image: "/media/coaches/zack-williams.jpg",
   },
   {
     slug: "gio-vaccaro",
@@ -47,7 +47,7 @@ export const coaches: Coach[] = [
     name: "Braeden Chaeng",
     role: "Offensive Line",
     bio: "Played U Sports.",
-    image: "/media/coaches/kelly-butler.jpg",
+    image: "/media/coaches/braeden-chaeng.jpg",
   },
   {
     slug: "scott-barbour",
@@ -61,6 +61,6 @@ export const coaches: Coach[] = [
     name: "Max Fisher",
     role: "Offensive Line",
     bio: "Played U Sports.",
-    image: "/media/coaches/kelly-butler.jpg",
+    image: "/media/coaches/max-fisher.jpg",
   },
 ];

@@ -22,7 +22,7 @@ export const programs: Program[] = [
       "Paired with a mentor from our high school program",
     ],
     cta: "Start your athlete",
-    image: "/media/drills/group-drill-1.jpg",
+    image: "/media/drills/high-school-1.jpg",
   },
   {
     slug: "high-school",
@@ -47,7 +47,7 @@ export const programs: Program[] = [
       "1-on-1 development & coaching",
     ],
     cta: "Earn your offer",
-    image: "/media/drills/high-school-1.jpg",
+    image: "/media/drills/group-drill-1.jpg",
   },
   {
     slug: "college",
@@ -81,7 +81,7 @@ export const programs: Program[] = [
       "1-on-1 coaching",
     ],
     cta: "Prep for the combine",
-    image: "/media/drills/ramsey-bag-drill.jpg",
+    image: "/media/drills/combine-prep.jpg",
   },
   {
     slug: "pro",

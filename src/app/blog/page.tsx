@@ -25,8 +25,33 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <Section className="border-b border-border bg-noise">
-        <Container>
+      <section className="relative isolate flex min-h-[60vh] items-center overflow-hidden border-b border-border sm:min-h-[70vh]">
+        <div className="absolute inset-0 -z-20">
+          <Image
+            src="/media/hero/blog-hero.jpg"
+            alt="Trench Academy blog"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <video
+            src="/media/video/blog-hero.mp4"
+            poster="/media/hero/blog-hero.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
+          />
+        </div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-bg/85 via-bg/65 to-bg/35" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-bg via-transparent to-bg/40" />
+        <div className="absolute inset-0 -z-10 diagonal-stripes opacity-30" />
+
+        <Container className="relative w-full py-20 sm:py-28">
           <Eyebrow>Blog</Eyebrow>
           <h1 className="mt-6 font-display text-5xl font-bold uppercase leading-[0.95] tracking-tight sm:text-7xl">
             Notes from
@@ -38,7 +63,7 @@ export default function BlogIndexPage() {
             behind everything we do.
           </p>
         </Container>
-      </Section>
+      </section>
 
       <Section>
         <Container>

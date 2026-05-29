@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { nav, site } from "@/lib/site";
-import { Logo } from "./Logo";
 import { SocialLinks } from "./SocialLinks";
-import { MailIcon } from "./icons";
+import { EmailLink } from "./EmailLink";
 
 export function Footer() {
   return (
@@ -10,8 +10,33 @@ export function Footer() {
       <div className="mx-auto w-full max-w-(--container-wide) px-6 py-16 sm:px-8">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Logo />
-            <p className="mt-4 max-w-xs text-sm text-fg-muted">
+            <div className="flex flex-col items-start gap-5">
+              <Link href="/" aria-label="Trench Academy by Recruit Ready">
+                <Image
+                  src="/logo.png"
+                  alt="Trench Academy"
+                  width={120}
+                  height={112}
+                  className="h-16 w-auto"
+                />
+              </Link>
+              <a
+                href="https://www.rrsportsacademy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Recruit Ready"
+                className="opacity-90 transition-opacity hover:opacity-100"
+              >
+                <Image
+                  src="/recruit-ready-logo.png"
+                  alt="Recruit Ready"
+                  width={300}
+                  height={56}
+                  className="h-7 w-auto"
+                />
+              </a>
+            </div>
+            <p className="mt-6 max-w-xs text-sm text-fg-muted">
               {site.description}
             </p>
           </div>
@@ -52,13 +77,11 @@ export function Footer() {
             </h4>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <a
-                  href={`mailto:${site.email}`}
+                <EmailLink
+                  user={site.emailUser}
+                  domain={site.emailDomain}
                   className="inline-flex items-center gap-2.5 text-fg-muted transition-colors hover:text-brand-primary"
-                >
-                  <MailIcon className="h-5 w-5 flex-shrink-0" />
-                  <span>{site.email}</span>
-                </a>
+                />
               </li>
             </ul>
             <SocialLinks className="mt-2" />

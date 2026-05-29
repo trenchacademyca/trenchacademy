@@ -43,7 +43,7 @@ const jsonLd = {
   "@type": "SportsOrganization",
   name: `${site.name} ${site.parent}`,
   url: site.url,
-  logo: `${site.url}/logo.jpg`,
+  logo: `${site.url}/logo.png`,
   description: site.description,
   sport: "American football",
   sameAs: [site.social.instagram],

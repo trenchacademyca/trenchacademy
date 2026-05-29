@@ -7,6 +7,7 @@ import { Section } from "@/components/site/Section";
 import { Eyebrow } from "@/components/site/Eyebrow";
 import { Button } from "@/components/site/Button";
 import { posts } from "@/data/posts";
+import { site } from "@/lib/site";
 
 type Params = { slug: string };
 
@@ -46,8 +47,39 @@ export default async function BlogPostPage({
   const post = posts.find((p) => p.slug === slug);
   if (!post) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Organization",
+      name: `${site.name} ${site.parent}`,
+      url: site.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: `${site.name} ${site.parent}`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${site.url}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${site.url}/blog/${post.slug}`,
+    },
+    ...(post.coverImage && { image: `${site.url}${post.coverImage}` }),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Section className="border-b border-border bg-noise">
         <Container size="narrow">
           <Link

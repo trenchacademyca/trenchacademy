@@ -5,7 +5,8 @@ export const site = {
   description:
     "Trench Academy by Recruit Ready develops football athletes from grassroots through college and pro. Position-specific training, recruiting prep, and elite-level development.",
   url: "https://trenchacademy.ca",
-  email: "info@trenchacademy.ca",
+  emailUser: "info",
+  emailDomain: "trenchacademy.ca",
   phone: "",
   location: "",
   // Web3Forms public access key — routes form submissions to the configured inbox.
@@ -18,7 +19,7 @@ export const site = {
 export const nav = [
   { label: "About", href: "/about" },
   { label: "Programs", href: "/programs" },
-  { label: "Athletes", href: "/testimonials" },
+  { label: "Athletes", href: "/athletes" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
