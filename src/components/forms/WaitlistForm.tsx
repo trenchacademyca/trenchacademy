@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/site/Button";
 import { site } from "@/lib/site";
+import { submitToSheet } from "@/lib/submitToSheet";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -21,6 +22,10 @@ export function WaitlistForm({ compact = false }: { compact?: boolean }) {
     formData.append("subject", "New App Waitlist Signup: Trench Academy Website");
     formData.append("from_name", "Trench Academy Website");
     formData.append("Form", "App Waitlist (Trench Academy app early access)");
+
+    submitToSheet("App Waitlist", {
+      email: String(formData.get("email") || ""),
+    });
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {

@@ -1,25 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { programs } from "@/data/programs";
 import { Button } from "@/components/site/Button";
 import { site } from "@/lib/site";
 import { submitToSheet } from "@/lib/submitToSheet";
 
-const levels = [
-  "Youth",
-  "High School",
-  "College / Transfer",
-  "Pro / Post-college",
-];
-
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function InquiryForm() {
-  const searchParams = useSearchParams();
-  const prefillProgram = searchParams.get("program") ?? "";
-
+export function YouthProgramForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -30,17 +18,17 @@ export function InquiryForm() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    formData.append("access_key", site.formAccessKey);
-    formData.append("subject", "New Inquiry: Trench Academy Website");
+    formData.append("access_key", site.youthProgramAccessKey);
+    formData.append("subject", "New Youth Program Inquiry: Trench Academy Website");
     formData.append("from_name", "Trench Academy Website");
-    formData.append("Form", "Contact Inquiry");
+    formData.append("Form", "Youth Program Inquiry");
 
-    submitToSheet("Contact Inquiry", {
+    submitToSheet("Youth Program Inquiry", {
       name: String(formData.get("name") || ""),
       email: String(formData.get("email") || ""),
       phone: String(formData.get("phone") || ""),
-      level: String(formData.get("level") || ""),
-      program: String(formData.get("program") || ""),
+      level: "Youth",
+      program: "Youth Program",
       position: String(formData.get("position") || ""),
       message: String(formData.get("message") || ""),
     });
@@ -97,7 +85,7 @@ export function InquiryForm() {
       />
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block">
-          <span className={labelCls}>Your Name *</span>
+          <span className={labelCls}>Parent / Guardian Name *</span>
           <input
             required
             name="name"
@@ -132,58 +120,24 @@ export function InquiryForm() {
           />
         </label>
         <label className="block">
-          <span className={labelCls}>Athlete Level *</span>
-          <select
-            required
-            name="level"
-            defaultValue=""
-            className={`mt-2 ${inputCls} appearance-none`}
-          >
-            <option value="" disabled>
-              Select level
-            </option>
-            {levels.map((l) => (
-              <option key={l} value={l}>
-                {l}
-              </option>
-            ))}
-          </select>
+          <span className={labelCls}>Athlete&apos;s Position(s)</span>
+          <input
+            name="position"
+            type="text"
+            className={`mt-2 ${inputCls}`}
+            placeholder="e.g. OL, DL"
+          />
         </label>
       </div>
 
       <label className="block">
-        <span className={labelCls}>Program Interest</span>
-        <select
-          name="program"
-          defaultValue={prefillProgram}
-          className={`mt-2 ${inputCls} appearance-none`}
-        >
-          <option value="">No preference / not sure yet</option>
-          {programs.map((p) => (
-            <option key={p.slug} value={p.name}>
-              {p.name}
-            </option>
-          ))}
-        </select>
-      </label>
-
-      <label className="block">
-        <span className={labelCls}>Position(s)</span>
-        <input
-          name="position"
-          type="text"
-          className={`mt-2 ${inputCls}`}
-          placeholder="e.g. OL, DL, OT, OG, C, DE, DT"
-        />
-      </label>
-
-      <label className="block">
-        <span className={labelCls}>Your Message</span>
+        <span className={labelCls}>Tell us about your athlete *</span>
         <textarea
+          required
           name="message"
           rows={5}
           className={`mt-2 ${inputCls} resize-y`}
-          placeholder="Goals, current school/team, year, and anything else we should know."
+          placeholder="Name, age, current school or team, goals."
         />
       </label>
 
