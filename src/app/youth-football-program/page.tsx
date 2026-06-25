@@ -17,7 +17,7 @@ export default function YouthProgramPage() {
         <div className="mx-auto max-w-2xl">
           <Eyebrow>Youth Program</Eyebrow>
           <h1 className="mt-6 font-display text-4xl font-bold uppercase leading-tight sm:text-5xl">
-            Trench Academy Youth.
+            Trench Academy Youth
           </h1>
           <p className="mt-6 text-fg-muted">
             Inquire below and a coach will be in touch.
