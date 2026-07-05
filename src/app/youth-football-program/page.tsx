@@ -10,10 +10,17 @@ import { programs } from "@/data/programs";
 const youth = programs.find((p) => p.slug === "youth-trench-program")!;
 
 export const metadata: Metadata = {
-  title: "Youth Football Program",
+  title: "Youth Lineman Program in Winnipeg | Trench Academy",
   description:
-    "Trench Academy's Youth Trench Program is a multi-level mentoring program for ages 9-13. Development, holistic coaching, and academic accountability. Spots are limited.",
-  robots: { index: false, follow: false },
+    "Winnipeg's premier youth football lineman program for athletes ages 9-13. 13 weeks of O-line and D-line coaching, film study, and academic accountability, mentored by college and pro players. Spots are limited.",
+  openGraph: {
+    title: "Youth Lineman Program in Winnipeg | Trench Academy",
+    description:
+      "Winnipeg's premier youth football lineman program for athletes ages 9-13. 13 weeks of O-line and D-line coaching, film study, and academic accountability, mentored by college and pro players. Spots are limited.",
+    url: "https://trenchacademy.ca/youth-football-program",
+    siteName: "Trench Academy",
+    type: "website",
+  },
 };
 
 const bullets = [
