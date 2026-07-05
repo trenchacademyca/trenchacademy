@@ -130,7 +130,7 @@ export default function YouthProgramPage() {
                 Youth Development Coordinator
               </p>
               <p className="mt-1 font-display text-lg font-bold uppercase text-fg">
-                Braeden Cheang
+                Braedan Cheang
               </p>
             </div>
           </div>

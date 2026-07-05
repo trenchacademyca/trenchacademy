@@ -44,7 +44,7 @@ export const coaches: Coach[] = [
   },
   {
     slug: "braeden-cheang",
-    name: "Braeden Cheang",
+    name: "Braedan Cheang",
     role: "Offensive Line",
     bio: "Played U Sports.",
     image: "/media/coaches/braeden-cheang.jpg",
