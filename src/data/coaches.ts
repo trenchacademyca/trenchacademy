@@ -43,11 +43,11 @@ export const coaches: Coach[] = [
     image: "/media/coaches/eric.jpg",
   },
   {
-    slug: "braeden-chaeng",
-    name: "Braeden Chaeng",
+    slug: "braeden-cheang",
+    name: "Braeden Cheang",
     role: "Offensive Line",
     bio: "Played U Sports.",
-    image: "/media/coaches/braeden-chaeng.jpg",
+    image: "/media/coaches/braeden-cheang.jpg",
   },
   {
     slug: "scott-barbour",

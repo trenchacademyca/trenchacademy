@@ -16,10 +16,12 @@ export const programs: Program[] = [
     summary:
       "The Youth Trench Program is a fundamental movement program introducing the basic concepts of football, built around mentorship from our high school athletes.",
     bullets: [
-      "Stance in the run and pass game",
-      "Introduction to basic football knowledge",
-      "Watching yourself on film",
-      "Paired with a mentor from our high school program",
+      "Learn fundamental athletic movements: stretching, running, and proper 3-point stance",
+      "Develop offensive football movement skills and position-specific fundamentals",
+      "Learn the fundamentals of run and pass game, player positions, offensive line splits, and huddle communication",
+      "Study film: review your drills, analyze your performance, and identify areas for improvement",
+      "Train alongside mentors from our high school, college, and pro O-linemen",
+      "Join our academic development and accountability program",
     ],
     cta: "Start your athlete",
     image: "/media/drills/high-school-1.jpg",
