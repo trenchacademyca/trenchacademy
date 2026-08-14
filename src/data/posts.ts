@@ -32,12 +32,12 @@ To every athlete still in the lab: keep working. The trenches don't lie.`,
     title: "Welcome to the Trenches",
     date: "2026-03-15",
     excerpt:
-      "Why we built Trench Academy by Recruit Ready, and what it means for the athletes walking through our doors.",
+      "Why we built Trench Academy, and what it means for the athletes walking through our doors.",
     category: "News",
     coverImage: "/media/family/family.jpg",
     body: `Trench Academy is where line play gets taken seriously. Offensive and defensive linemen, coached by people who've done it, in a room built to push everyone in it forward.
 
-We're the dedicated line program at Recruit Ready, and we exist for one thing: developing the players who win games up front. Real reps, position-specific coaching, film, and mentorship that follows our athletes on and off the field. The work doesn't stop when practice does.
+We exist for one thing: developing the players who win games up front. Real reps, position-specific coaching, film, and mentorship that follows our athletes on and off the field. The work doesn't stop when practice does.
 
 Wherever you're at right now, from your first stance to chasing the next level, there's a spot for you here. Put in the work, hold the standard, and trust the process.
 

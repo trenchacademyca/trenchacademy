@@ -10,7 +10,7 @@ import { featuredAthletes, testimonials } from "@/data/athletes";
 export const metadata: Metadata = {
   title: "Athletes",
   description:
-    "Athletes who have trained with Trench Academy by Recruit Ready, and what they're doing now.",
+    "Athletes who have trained with Trench Academy, and what they're doing now.",
 };
 
 export default function TestimonialsPage() {

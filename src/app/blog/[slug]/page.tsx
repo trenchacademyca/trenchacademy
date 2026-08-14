@@ -56,12 +56,12 @@ export default async function BlogPostPage({
     dateModified: post.date,
     author: {
       "@type": "Organization",
-      name: `${site.name} ${site.parent}`,
+      name: `${site.name}`,
       url: site.url,
     },
     publisher: {
       "@type": "Organization",
-      name: `${site.name} ${site.parent}`,
+      name: `${site.name}`,
       logo: {
         "@type": "ImageObject",
         url: `${site.url}/logo.png`,

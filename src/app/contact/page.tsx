@@ -13,7 +13,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start an inquiry with Trench Academy by Recruit Ready. Tell us about your athlete and we'll be in touch.",
+    "Start an inquiry with Trench Academy. Tell us about your athlete and we'll be in touch.",
 };
 
 export default function ContactPage() {
@@ -67,7 +67,7 @@ export default function ContactPage() {
             </div>
 
             <aside className="space-y-8">
-              <div className="flex items-center gap-5">
+              <div className="flex items-center">
                 <Image
                   src="/logo.png"
                   alt="Trench Academy"
@@ -75,22 +75,6 @@ export default function ContactPage() {
                   height={112}
                   className="h-12 w-auto"
                 />
-                <span className="h-9 w-px bg-border" aria-hidden="true" />
-                <a
-                  href="https://www.rrsportsacademy.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Recruit Ready"
-                  className="opacity-90 transition-opacity hover:opacity-100"
-                >
-                  <Image
-                    src="/recruit-ready-logo.png"
-                    alt="Recruit Ready"
-                    width={300}
-                    height={56}
-                    className="h-6 w-auto"
-                  />
-                </a>
               </div>
 
               <div>

@@ -1,9 +1,8 @@
 export const site = {
   name: "Trench Academy",
-  parent: "by Recruit Ready",
   tagline: "Trust the process.",
   description:
-    "Trench Academy by Recruit Ready develops football athletes from grassroots through college and pro. Position-specific training, recruiting prep, and elite-level development.",
+    "Trench Academy develops football athletes from grassroots through college and pro. Position-specific training, recruiting prep, and elite-level development.",
   url: "https://trenchacademy.ca",
   emailUser: "info",
   emailDomain: "trenchacademy.ca",
@@ -18,7 +17,7 @@ export const site = {
   sheetUrl: process.env.NEXT_PUBLIC_SHEET_URL || "",
   sheetToken: process.env.NEXT_PUBLIC_SHEET_TOKEN || "",
   social: {
-    instagram: "https://www.instagram.com/recruitready/",
+    instagram: "https://www.instagram.com/trenchacademy.ca/",
   },
 };
 

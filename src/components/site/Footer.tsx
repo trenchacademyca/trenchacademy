@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <div className="flex flex-col items-start gap-5">
-              <Link href="/" aria-label="Trench Academy by Recruit Ready">
+              <Link href="/" aria-label="Trench Academy">
                 <Image
                   src="/logo.png"
                   alt="Trench Academy"
@@ -20,21 +20,6 @@ export function Footer() {
                   className="h-16 w-auto"
                 />
               </Link>
-              <a
-                href="https://www.rrsportsacademy.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Recruit Ready"
-                className="opacity-90 transition-opacity hover:opacity-100"
-              >
-                <Image
-                  src="/recruit-ready-logo.png"
-                  alt="Recruit Ready"
-                  width={300}
-                  height={56}
-                  className="h-7 w-auto"
-                />
-              </a>
             </div>
             <p className="mt-6 max-w-xs text-sm text-fg-muted">
               {site.description}
@@ -90,7 +75,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-fg-dim sm:flex-row sm:items-center">
           <span>
-            © {new Date().getFullYear()} {site.name} {site.parent}. All rights reserved.
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
           </span>
           <span className="font-display uppercase tracking-[0.25em]">
             Trust the process.
