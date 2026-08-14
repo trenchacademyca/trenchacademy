@@ -31,7 +31,7 @@ function CoachCard({ coach }: { coach: Coach }) {
 export const metadata: Metadata = {
   title: "About",
   description:
-    "The story behind Trench Academy by Recruit Ready: a football training organization built to develop athletes from grassroots through pro.",
+    "The story behind Trench Academy: a football training organization built to develop linemen from grassroots through pro.",
 };
 
 export default function AboutPage() {
@@ -71,9 +71,9 @@ export default function AboutPage() {
             <span className="text-brand-primary">Now we build athletes.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-fg-muted">
-            Recruit Ready develops athletes across every position. Trench Academy exists
-            for one of them: the trenches. We&apos;re the dedicated line-play program for
-            offensive and defensive linemen, coached by people who&apos;ve done it.
+            Trench Academy is a football training organization built for one position group:
+            the trenches. Offensive and defensive linemen, trained by coaches who have
+            played the game at every level, from grassroots through pro.
           </p>
         </Container>
       </section>

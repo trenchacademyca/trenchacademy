@@ -56,7 +56,7 @@ export default function YouthProgramPage() {
           <h1 className="mt-6 font-display text-5xl font-bold uppercase leading-[0.85] tracking-tight text-fg sm:text-7xl lg:text-8xl">
             Where it <span className="text-brand-primary">starts.</span>
           </h1>
-          <div className="mt-8 flex items-center gap-6 sm:gap-8">
+          <div className="mt-8">
             <Image
               src="/logo.png"
               alt="Trench Academy"
@@ -65,22 +65,6 @@ export default function YouthProgramPage() {
               className="h-14 w-auto sm:h-16"
               priority
             />
-            <span className="h-10 w-px bg-border" aria-hidden="true" />
-            <a
-              href="https://www.rrsportsacademy.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Recruit Ready"
-              className="opacity-90 transition-opacity hover:opacity-100"
-            >
-              <Image
-                src="/recruit-ready-logo.png"
-                alt="Recruit Ready"
-                width={300}
-                height={56}
-                className="h-7 w-auto sm:h-9"
-              />
-            </a>
           </div>
           <p className="mt-8 max-w-xl text-base leading-relaxed text-fg-muted sm:text-lg">
             A multi-level mentoring program for athletes ages 9 to 13 (grades 5 to 8).

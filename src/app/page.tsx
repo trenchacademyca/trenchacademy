@@ -16,7 +16,7 @@ import { WaitlistForm } from "@/components/forms/WaitlistForm";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Trench Academy by Recruit Ready · Football Line-Play Training, Recruiting & Development",
+      "Trench Academy · Football Line-Play Training, Recruiting & Development",
   },
   description:
     "Position-specific football training for offensive and defensive linemen. Grassroots through pro: technique, recruiting prep, combine prep, and elite player development. Trust the process.",
@@ -62,13 +62,13 @@ export default function Home() {
         <div className="absolute inset-0 -z-10 diagonal-stripes opacity-40" />
 
         <Container className="relative pt-20 pb-24 sm:pt-32 sm:pb-40">
-          <Eyebrow>Trench Academy by Recruit Ready</Eyebrow>
+          <Eyebrow>Trench Academy</Eyebrow>
 
           <h1 className="mt-6 max-w-5xl font-display text-6xl font-bold uppercase leading-[0.85] tracking-tight text-fg sm:text-8xl lg:text-9xl">
             Trust the <span className="text-brand-primary">process.</span>
           </h1>
 
-          <div className="mt-8 flex items-center gap-6 sm:gap-8">
+          <div className="mt-8">
             <Image
               src="/logo.png"
               alt="Trench Academy"
@@ -77,22 +77,6 @@ export default function Home() {
               className="h-14 w-auto sm:h-16"
               priority
             />
-            <span className="h-10 w-px bg-border" aria-hidden="true" />
-            <a
-              href="https://www.rrsportsacademy.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Recruit Ready"
-              className="opacity-90 transition-opacity hover:opacity-100"
-            >
-              <Image
-                src="/recruit-ready-logo.png"
-                alt="Recruit Ready"
-                width={300}
-                height={56}
-                className="h-7 w-auto sm:h-9"
-              />
-            </a>
           </div>
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-fg-muted">
@@ -122,7 +106,7 @@ export default function Home() {
       <Marquee
         items={[
           "Youth → Pro",
-          "Recruit Ready",
+          "Position-Specific Training",
           "Trenches Training",
           "O-Line",
           "D-Line",

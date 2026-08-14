@@ -18,13 +18,13 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} ${site.parent} · ${site.tagline}`,
+    default: `${site.name} · ${site.tagline}`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
   metadataBase: new URL(site.url),
   openGraph: {
-    title: `${site.name} ${site.parent}`,
+    title: `${site.name}`,
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} ${site.parent}`,
+    title: `${site.name}`,
     description: site.description,
   },
   robots: { index: true, follow: true },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SportsOrganization",
-  name: `${site.name} ${site.parent}`,
+  name: `${site.name}`,
   url: site.url,
   logo: `${site.url}/logo.png`,
   description: site.description,

@@ -1,4 +1,4 @@
-# Trench Academy by Recruit Ready — Website
+# Trench Academy — Website
 
 Marketing site for Trench Academy, a football line-play training program. Built with Next.js, deployed on Vercel.
 
@@ -67,7 +67,7 @@ src/
   lib/site.ts                  # site-wide config (name, URL, social, brand email parts, Web3Forms key)
 public/
   logo.png                     # Trench Academy gorilla mark
-  recruit-ready-logo.png       # parent brand logo
+  recruit-ready-logo.png       # legacy logo (no longer used on site)
   media/
     athletes/                  # athlete photos
     coaches/                   # coach photos
@@ -293,4 +293,4 @@ Environment variables: **none currently required**. The Web3Forms key is in code
 
 ## License
 
-Proprietary. All assets and brand marks © Trench Academy / Recruit Ready.
+Proprietary. All assets and brand marks © Trench Academy.
